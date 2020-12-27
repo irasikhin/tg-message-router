@@ -4,7 +4,7 @@
 
 ## About
 
-tg-message-router helps you route messages from a telegram channel to a specified http URL.
+**tg-message-router** helps you route messages from a telegram channel to a specified http URL.
 
 ## Usage
 
