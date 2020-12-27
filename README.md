@@ -12,6 +12,8 @@ Get **api_id** and **api_hash** at https://my.telegram.org.
 
 ```shell
 docker run \ 
+  -i \
+  -t \
   -e TELEGRAM_FROM_CHANNEL_ID=<some channel id> \
   -e TELEGRAM_API_ID=<api id> \
   -e TELEGRAM_API_HASH=<api hash> \
