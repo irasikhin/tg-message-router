@@ -18,3 +18,7 @@ docker run \
   -e TELEGRAM_ROUTE_HOOK_URL=<hook url> \
   irasikhin/tg-message-router
 ```
+
+## License
+
+[MIT](LICENSE)
