@@ -9,4 +9,4 @@ COPY --from=builder /root/.cache /root/.cache
 RUN pip install -r requirements.txt
 COPY ./app .
 ENV PATH=/root/.local:$PATH
-CMD [ "main.py" ]
+CMD ["python", "main.py" ]
