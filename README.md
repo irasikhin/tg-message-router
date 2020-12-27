@@ -8,7 +8,7 @@ tg-message-router helps you route messages from a telegram channel to a specifie
 
 ## Usage
 
-First of all you need to get your **api_id** and **api_hash** from at https://my.telegram.org
+Get **api_id** and **api_hash** at https://my.telegram.org.
 
 ```shell
 docker run \ 
