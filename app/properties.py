@@ -8,6 +8,7 @@ class Properties:
         self.api_id = int(os.environ['TELEGRAM_API_ID'])
         self.api_hash = os.environ['TELEGRAM_API_HASH']
         self.hook_urls = os.environ['TELEGRAM_ROUTE_HOOK_URLS'].split(",")
+        self.session_path = os.environ.get('TELEGRAM_SESSION_PATH', "./")
         self.session_name = os.environ.get('TELEGRAM_SESSION_NAME', str(self.api_id))
         self.channel_id = os.environ.get('TELEGRAM_CHANNEL_ID')
         self.channel_title = os.environ.get('TELEGRAM_CHANNEL_TITLE')
