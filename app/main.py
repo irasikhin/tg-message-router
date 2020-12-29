@@ -52,9 +52,12 @@ async def post_message(channel_id: str, message: str, properties: Properties):
         'channel_id': channel_id,
         'message': message
     }
+    headers = {
+        'content-type': 'application/json'
+    }
     for hook_url in properties.hook_urls:
         try:
             print('send notify "%s" to url "%s"' % (request, hook_url))
-            requests.post(hook_url, json=request)
+            requests.post(hook_url, json=request, headers=headers)
         except Exception as e:
             print('error occurs during %s hook notification, error %s' % (hook_url, e))
