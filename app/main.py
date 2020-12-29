@@ -14,7 +14,9 @@ async def main():
     print('start bot')
     properties = Properties()
     print('properties: %s' % json.dumps(vars(properties), indent=4))
-    client = TelegramClient(properties.session_path + properties.session_name, properties.api_id, properties.api_hash)
+    client = TelegramClient(properties.session_path + '/' + properties.session_name,
+                            properties.api_id,
+                            properties.api_hash)
     await client.start()
     channel_id = await properties.get_channel_id(client)
     print('channel_id: %s' % channel_id)
