@@ -23,11 +23,8 @@ async def main():
 
     @client.on(NewMessage(pattern='.*'))
     async def handler(event: NewMessage.Event):
-        print('from channel "%s" rececived message "%s"' % (event.message.peer_id, event.message.message))
         if match_channel(channel_id, event.message):
             await post_message(channel_id, event.message.message, properties)
-
-    # print('message from peer %s received' % json.dumps(vars(event.message), indent=4))
 
     print('bot started')
     async with client:
