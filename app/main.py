@@ -24,7 +24,7 @@ async def main():
     @client.on(NewMessage(pattern='.*'))
     async def handler(event: NewMessage.Event):
         if match_channel(channel_id, event.message):
-            await post_message(channel_id, event.message.message, properties)
+            await post_message(channel_id, event.message.id, event.message.message, properties)
 
     print('bot started')
     async with client:
@@ -44,9 +44,10 @@ def match_channel(channel_id: str, message: Message):
     return True
 
 
-async def post_message(channel_id: str, message: str, properties: Properties):
+async def post_message(channel_id: str, message_id: str, message: str, properties: Properties):
     request = {
         'channel_id': channel_id,
+        'message_id': message_id,
         'message': message
     }
     headers = {
